@@ -1,7 +1,7 @@
 /**
  * Created by JeffWang ZhengLu on 4/28/15.
  */
-
+//comment
 
 import org.apache.hadoop.util.hash.Hash;
 import twitter4j.*;
