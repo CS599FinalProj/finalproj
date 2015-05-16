@@ -30,10 +30,6 @@ public class nlpProcessing {
                 System.out.println(str);
             }
 
-
-//            for(Object a : aa.tokenize().toArray()){
-//                System.out.println(a);
-//            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

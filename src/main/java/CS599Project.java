@@ -1,16 +1,10 @@
 /**
  * Created by JeffWang ZhengLu on 4/28/15.
  */
-//comment
 
-import org.apache.hadoop.util.hash.Hash;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
-import java.io.*;
-import java.util.HashSet;
-// testing
-//comment
 /**
  16.
  * Twitter application using Twitter4J
@@ -18,7 +12,6 @@ import java.util.HashSet;
  */
 
 public class CS599Project {
-    //private final Logger logger = Logger.getLogger(TwitterApplication.class.getName());
 
     public static void main(String[] args)  {
         Twitter twitter = new TwitterFactory().getInstance();
@@ -54,10 +47,6 @@ public class CS599Project {
         } catch (TwitterException e) {
             e.printStackTrace();
         }
-
-
-
-        //pull test
 
     }
 
