@@ -43,7 +43,7 @@ public class NaiveBayesClassifier implements NaiveBayesInterface {
      * @param document reddit post title
      * @param category subreddit name
      */
-    public void addTrainingDocument(List<CoreLabel> document, String category) throws IOException {
+    public void addTrainingDocument(String document, String category) throws IOException {
         //increment the total document count
         totalDocumentCount++;
 
@@ -52,14 +52,12 @@ public class NaiveBayesClassifier implements NaiveBayesInterface {
         Object[] objectses = nlp.clean(document).toArray();
         String[] documents = Arrays.copyOf(objectses, objectses.length, String[].class);
 
-        // TODO: students need to implement this method
         for(String str : documents){
             if(!docFrequency.contains(str)){
                 docFrequency.add(str);
             }
         }
 
-        // TODO: Students need to update statistical information like
         // term frequency of an input training doc and document frequency etc.
 
         if(data.containsKey(category)){
@@ -92,7 +90,7 @@ public class NaiveBayesClassifier implements NaiveBayesInterface {
      * @param document reddit post title for testing
      * @return subreddit document most likely belongs to
      */
-    public String testData(List<CoreLabel> document) throws IOException {
+    public String testData(String document) throws IOException {
         // TODO: students need to implement this method
         Object[] objectses = nlp.clean(document).toArray();
         String[] documents = Arrays.copyOf(objectses, objectses.length, String[].class);
@@ -155,8 +153,16 @@ public class NaiveBayesClassifier implements NaiveBayesInterface {
     //    return data;
     //}
 
+    public void addTrainingDocument(List<CoreLabel> doc, String cat) throws IOException {
+
+    }
+
     public int getTotalDocumentCount() {
         return totalDocumentCount;
+    }
+
+    public String testData(List<CoreLabel> doc) throws IOException {
+        return null;
     }
 
     private TreeMap<String, Integer> updateFrequency(String[] documents, TreeMap<String, Integer> treeMap){

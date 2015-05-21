@@ -32,7 +32,7 @@ public class nlpProcessing {
 //        TokenizerAnnotator token = new TokenizerAnnotator();
 //        CleanXmlAnnotator clean = new CleanXmlAnnotator();
 //        try {
-//            Reader reader = new FileReader("src/main/myfile.txt");
+//            Reader reader = new FileReader("src/main/trainingdatanegative.txt");
 //
 //            Tokenizer<CoreLabel> aa = token.getTokenizer(reader);
 //            List<CoreLabel> bb = clean.process(aa.tokenize());
@@ -47,9 +47,11 @@ public class nlpProcessing {
 //    }
 
 
-    public ArrayList<String> clean(List<CoreLabel> document) throws IOException {
+    public ArrayList<String> clean(String document) throws IOException {
+        String[] documents = document.split(" ");
         ArrayList<String> titles = new ArrayList<String>();
-        for(CoreLabel token : document){
+
+        for(String token : documents){
             String str = token.toString().toLowerCase();
             str = removeHttp(str);
             str = removeRepeatedCharacter(str);
