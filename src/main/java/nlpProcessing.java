@@ -1,51 +1,32 @@
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.CleanXmlAnnotator;
-import edu.stanford.nlp.pipeline.TokenizerAnnotator;
-import edu.stanford.nlp.process.Tokenizer;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ZhengLu JeffWang on 5/8/15.
  */
 public class nlpProcessing {
-    public String removeHttp(String str) {
+
+    private String removeHttp(String str) {
         String a = str;
         if(a.startsWith("http:"))
             a = "";
         return a;
     }
 
-    public String removeRepeatedCharacter(String str) {
+    private String removeRepeatedCharacter(String str) {
         return str.replaceAll("(.)\\1+", "$1");
     }
 
-    public String removePunctuation(String str) {
+    private String removePunctuation(String str) {
         return str.replaceAll("[\\p{P}&&[^\u0027]]", "");
     }
 
-
-//    public static void main(String[] args) throws IOException {
-//
-//        TokenizerAnnotator token = new TokenizerAnnotator();
-//        CleanXmlAnnotator clean = new CleanXmlAnnotator();
-//        try {
-//            Reader reader = new FileReader("src/main/trainingdatanegative.txt");
-//
-//            Tokenizer<CoreLabel> aa = token.getTokenizer(reader);
-//            List<CoreLabel> bb = clean.process(aa.tokenize());
-//            for(String str : clean(bb)){
-//                System.out.println(str);
-//            }
-//
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
+    private String removeAtUsers(String str){
+        String a = str;
+        if(a.startsWith("@"))
+            a = "";
+        return a;
+    }
 
     public ArrayList<String> clean(String document) throws IOException {
         String[] documents = document.split(" ");
@@ -54,6 +35,7 @@ public class nlpProcessing {
         for(String token : documents){
             String str = token.toString().toLowerCase();
             str = removeHttp(str);
+            str = removeAtUsers(str);
             str = removeRepeatedCharacter(str);
             str = removePunctuation(str);
             if(!str.equals(""))
