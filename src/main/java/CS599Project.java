@@ -11,7 +11,7 @@ import twitter4j.auth.AccessToken;
  17.
  */
 
-public class CS599Project {
+class CS599 {
 
     public static void main(String[] args)  {
         Twitter twitter = new TwitterFactory().getInstance();
@@ -30,7 +30,7 @@ public class CS599Project {
         Query query = new Query("Google stock");
         query.setCount(100);
         query.setLang("en");
-        query.setSince("2014-01-01");
+        query.setSince("2012-01-01");
 
 
         try {
@@ -49,6 +49,7 @@ public class CS599Project {
         }
 
     }
+
 
 
 

@@ -8,40 +8,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ZhengLu on 5/8/15.
+ * Created by ZhengLu JeffWang on 5/8/15.
  */
 public class nlpProcessing {
-    public static void main(String[] args) throws IOException {
+    public String removeHttp(String str) {
+        String a = str;
+        if(a.startsWith("http:"))
+            a = "";
+        return a;
+    }
 
-        String document = "";
-        TokenizerAnnotator token = new TokenizerAnnotator();
-        CleanXmlAnnotator clean = new CleanXmlAnnotator();
-        try {
-            Reader reader = new FileReader("src/main/myfile.txt");
+    public String removeRepeatedCharacter(String str) {
+        return str.replaceAll("(.)\\1+", "$1");
+    }
 
-            Tokenizer<CoreLabel> aa = token.getTokenizer(reader);
-            List<CoreLabel> bb = clean.process(aa.tokenize());
-            for(String str : clean(bb)){
-                System.out.println(str);
-            }
-            System.out.println("-------------");
-            for(CoreLabel q : bb){
-                String str = q.toString();
-                System.out.println(str);
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
+    public String removePunctuation(String str) {
+        return str.replaceAll("[\\p{P}&&[^\u0027]]", "");
     }
 
 
-    static private ArrayList<String> clean(List<CoreLabel> document) throws IOException {
+//    public static void main(String[] args) throws IOException {
+//
+//        TokenizerAnnotator token = new TokenizerAnnotator();
+//        CleanXmlAnnotator clean = new CleanXmlAnnotator();
+//        try {
+//            Reader reader = new FileReader("src/main/myfile.txt");
+//
+//            Tokenizer<CoreLabel> aa = token.getTokenizer(reader);
+//            List<CoreLabel> bb = clean.process(aa.tokenize());
+//            for(String str : clean(bb)){
+//                System.out.println(str);
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+
+
+    public ArrayList<String> clean(List<CoreLabel> document) throws IOException {
         ArrayList<String> titles = new ArrayList<String>();
         for(CoreLabel token : document){
             String str = token.toString().toLowerCase();
-            titles.add(str);
+            str = removeHttp(str);
+            str = removeRepeatedCharacter(str);
+            str = removePunctuation(str);
+            if(!str.equals(""))
+                titles.add(str);
         }
 
 

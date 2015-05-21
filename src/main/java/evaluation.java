@@ -15,7 +15,7 @@ public class evaluation {
     public static void main(String[] args) {
         String document = "The disconnect in the US stock market just keeps getting bigger (SPY, SPX) http://t.co/I2nQsYgp5Y http://t.co/QW405Y04Om";
         String text = "I am feeling very bad";
-        String document2 = "I do not ";
+        String document2 = ":-) ";
 
 
         Properties props = new Properties();
