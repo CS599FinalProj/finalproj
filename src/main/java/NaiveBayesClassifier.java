@@ -1,9 +1,8 @@
-import edu.stanford.nlp.ling.CoreLabel;
 
 import java.io.IOException;
 import java.util.*;
 
-public class NaiveBayesClassifier implements NaiveBayesInterface {
+public class NaiveBayesClassifier {
     // TODO: students could define any private data structure to be used,
     // or use the recommended data structure like followings (you need to
     // uncomment them out).
@@ -145,25 +144,10 @@ public class NaiveBayesClassifier implements NaiveBayesInterface {
         return category;
     }
 
-    //public TreeMap<String, Integer> getDocFrequency() {
-        //return docFrequency;
-    //}
-
-    //public TreeMap<String, Category> getData() {
-    //    return data;
-    //}
-
-    public void addTrainingDocument(List<CoreLabel> doc, String cat) throws IOException {
-
-    }
-
     public int getTotalDocumentCount() {
         return totalDocumentCount;
     }
 
-    public String testData(List<CoreLabel> doc) throws IOException {
-        return null;
-    }
 
     private TreeMap<String, Integer> updateFrequency(String[] documents, TreeMap<String, Integer> treeMap){
         for(String str : documents){

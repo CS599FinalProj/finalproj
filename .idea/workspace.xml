@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1587d96e-d453-4732-9210-bc739501454e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/GenerateResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/testdata.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/trainingdatanegative.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/trainingdatapositive.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/myfile.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/CS599Project.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Stemmer.class" afterPath="$PROJECT_DIR$/target/classes/Stemmer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/nlpProcessing.class" afterPath="$PROJECT_DIR$/target/classes/nlpProcessing.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/NaiveBayesInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/NaiveBayesInterface.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GenerateResult.class" afterPath="$PROJECT_DIR$/target/classes/GenerateResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/NaiveBayesClassifier.class" afterPath="$PROJECT_DIR$/target/classes/NaiveBayesClassifier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java" afterPath="$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Stemmer.java" afterPath="$PROJECT_DIR$/src/main/java/Stemmer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nlpProcessing.java" afterPath="$PROJECT_DIR$/src/main/java/nlpProcessing.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="1.iws" />
@@ -39,41 +33,21 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2507#2524#0" expanded="true" />
-                <element signature="e#3466#3482#0" expanded="true" />
+                <element signature="e#2436#2453#0" expanded="true" />
+                <element signature="e#3395#3411#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenerateResult.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GenerateResult.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/GenerateResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stopwords_en.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/stopwords_en.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33678755">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testdata.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/testdata.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.5699482">
+              <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -108,11 +82,11 @@
         <option value="$PROJECT_DIR$/src/main/java/NaiveBayesInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/Stemmer.java" />
         <option value="$PROJECT_DIR$/src/main/java/nlpProcessing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java" />
         <option value="$PROJECT_DIR$/src/main/trainingdata.txt" />
         <option value="$PROJECT_DIR$/src/main/trainingdatapositive.txt" />
         <option value="$PROJECT_DIR$/src/main/testdata.txt" />
         <option value="$PROJECT_DIR$/src/main/java/GenerateResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java" />
       </list>
     </option>
   </component>
@@ -724,16 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/NaiveBayesInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41450778">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nlpProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3767313">
@@ -752,18 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2507#2524#0" expanded="true" />
-            <element signature="e#3466#3482#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/trainingdatapositive.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.025906736">
@@ -772,26 +724,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/stopwords_en.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33678755">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/testdata.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.103626944">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/NaiveBayesClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2436#2453#0" expanded="true" />
+            <element signature="e#3395#3411#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GenerateResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/stopwords_en.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33678755">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.5699482">
+          <caret line="22" column="83" selection-start-line="22" selection-start-column="83" selection-end-line="22" selection-end-column="83" />
           <folding />
         </state>
       </provider>
