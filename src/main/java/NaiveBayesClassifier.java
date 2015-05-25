@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.util.*;
 
 public class NaiveBayesClassifier {
-    // TODO: students could define any private data structure to be used,
     // or use the recommended data structure like followings (you need to
     // uncomment them out).
 
@@ -90,7 +89,6 @@ public class NaiveBayesClassifier {
      * @return subreddit document most likely belongs to
      */
     public String testData(String document) throws IOException {
-        // TODO: students need to implement this method
         Object[] objectses = nlp.clean(document).toArray();
         String[] documents = Arrays.copyOf(objectses, objectses.length, String[].class);
 
@@ -101,8 +99,6 @@ public class NaiveBayesClassifier {
         double value = (double)Integer.MIN_VALUE;
         String category = null; // return value
 
-
-        // TODO: students need to use the statistical information you have
         // collected during adding the training documents to predict the
         // category of each input testing document.
 

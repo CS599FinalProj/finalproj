@@ -13,9 +13,9 @@ import java.util.Properties;
 
 public class evaluation {
     public static void main(String[] args) {
-        String document = "The disconnect in the US stock market just keeps getting bigger (SPY, SPX) http://t.co/I2nQsYgp5Y http://t.co/QW405Y04Om";
+        String document = "obviously not siding with Cheney here: http://bit.ly/19j2d";
         String text = "I am feeling very bad";
-        String document2 = ":-) ";
+        String document2 = "Colin Powell rocked yesterday on CBS. Cheney needs to shut the hell up and go home.Powell is a man of Honor and served our country proudly\n";
 
 
         Properties props = new Properties();
@@ -27,5 +27,9 @@ public class evaluation {
             String sentiment = sentence.get(SentimentCoreAnnotations.ClassName.class);
             System.out.println(sentiment + "\t" + sentence);
         }
+
+
+
+        
     }
 }
