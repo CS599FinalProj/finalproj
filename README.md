@@ -1,5 +1,6 @@
 # CS599Final
 Next to do:
+
 1. Histogram
 2. 5 companies' testing data
 3. gui add exit
