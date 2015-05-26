@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 
 public class gui extends JFrame
 {
-    private JPanel panel;
     private JButton button1;
     private JButton button2;
     private JButton button3;
@@ -56,7 +54,11 @@ public class gui extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println("Naive Bayes");
+            try {
+                new nbGenerator(path);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
     }
 
@@ -64,7 +66,7 @@ public class gui extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            svmclassifer svmc = new svmclassifer(path);
+            svmClassifer svmc = new svmClassifer(path);
             try {
                 svmc.run();
             } catch (IOException e1) {

@@ -1,23 +1,18 @@
 import libsvm.*;
-import sun.rmi.server.InactiveGroupException;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.DoubleSummaryStatistics;
 import java.util.Hashtable;
 
-public class svmclassifer
+public class svmClassifer
 {
-
-
     svm_parameter _param = new svm_parameter();
     svm_problem _prob = new svm_problem();
     String _model_file;
 
     String path;
 
-    public svmclassifer(String path)
+    public svmClassifer(String path)
     {
         this.path = path;
     }
@@ -29,7 +24,7 @@ public class svmclassifer
     }
 
     public void trainingData() throws IOException {
-        needtodeleted svmGenerate = new needtodeleted();
+        svmGenerator svmGenerate = new svmGenerator();
         Hashtable<String, Integer> data = svmGenerate.getSVMTrainingData();
         ArrayList<Double> classes = svmGenerate.getClasses();
         ArrayList<ArrayList<svm_node>> parameter = svmGenerate.getTrainingParamater(data);
@@ -81,7 +76,7 @@ public class svmclassifer
     }
 
     public void testingData() throws IOException {
-        needtodeleted svmGenerate = new needtodeleted();
+        svmGenerator svmGenerate = new svmGenerator();
         Hashtable<String, Integer> data = svmGenerate.getSVMTrainingData();
         svm_node[][] result = changeTo2DArray(svmGenerate.getTestingParamater(data, path));
         svm_model model;
@@ -89,10 +84,10 @@ public class svmclassifer
         {
             model = svm.svm_load_model("out.txt");
 
-            for(int i=0;i<result.length;i++){
+            for (svm_node[] aResult : result) {
                 double v;
-                v = svm.svm_predict(model, result[i]);
-                if(v==1.0)
+                v = svm.svm_predict(model, aResult);
+                if (v == 1.0)
                     System.out.println("positive");
                 else
                     System.out.println("negative");
@@ -122,8 +117,5 @@ public class svmclassifer
         _param.weight = new double[0];
     }
 
-    public void readData()
-    {
 
-    }
 }

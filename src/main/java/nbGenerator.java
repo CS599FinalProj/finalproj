@@ -3,8 +3,8 @@ import java.io.*;
 /**
  * Created by ZhengLu JeffWang on 5/20/15.
  */
-public class GenerateResult {
-    public static void main(String[] args) throws IOException {
+public class nbGenerator {
+    public nbGenerator(String path) throws IOException {
 
         NaiveBayesClassifier nbc = new NaiveBayesClassifier();
 

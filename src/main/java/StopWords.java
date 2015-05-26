@@ -19,6 +19,8 @@ public class StopWords
         while((line = bufferedReader.readLine()) != null){
             words.add(line);
         }
+        fileReader.close();
+        bufferedReader.close();
     }
 
     public boolean isStopWord(String a) {

@@ -5,7 +5,7 @@ import libsvm.*;
 /**
  * Created by ZhengLu on 5/24/15.
  */
-public class needtodeleted {
+public class svmGenerator {
 
     private ArrayList<svm_node> sortArrayList(ArrayList<svm_node> nodes){
 
@@ -27,11 +27,11 @@ public class needtodeleted {
     }
 
     public Hashtable<String, Integer> getSVMTrainingData() throws IOException {
-        File trainingNegativeFile = new File("trainingdatanegative.txt");
+        File trainingNegativeFile = new File("src/main/trainingdatanegative.txt");
         FileReader trainingNegativeFr = new FileReader(trainingNegativeFile);
         BufferedReader trainingNegativeBr = new BufferedReader(trainingNegativeFr);
 
-        File trainingPositiveFile = new File("trainingdatapositive.txt");
+        File trainingPositiveFile = new File("src/main/trainingdatapositive.txt");
         FileReader trainingPositiveFr = new FileReader(trainingPositiveFile);
         BufferedReader trainingPositiveBr = new BufferedReader(trainingPositiveFr);
 
@@ -70,7 +70,7 @@ public class needtodeleted {
         ArrayList<svm_node> nodes;
         ArrayList<ArrayList<svm_node>> parameter = new ArrayList<ArrayList<svm_node>>();
 
-        File trainingNegativeFile = new File("trainingdatanegative.txt");
+        File trainingNegativeFile = new File("src/main/trainingdatanegative.txt");
         FileReader trainingNegativeFr = new FileReader(trainingNegativeFile);
         BufferedReader trainingNegativeBr = new BufferedReader(trainingNegativeFr);
 
@@ -93,7 +93,7 @@ public class needtodeleted {
         trainingNegativeBr.close();
         trainingNegativeFr.close();
 
-        File trainingPositiveFile = new File("trainingdatapositive.txt");
+        File trainingPositiveFile = new File("src/main/trainingdatapositive.txt");
         FileReader trainingPositiveFr = new FileReader(trainingPositiveFile);
         BufferedReader trainingPositiveBr = new BufferedReader(trainingPositiveFr);
         String trainingPositiveLine;
@@ -118,7 +118,7 @@ public class needtodeleted {
 
     public ArrayList<Double> getClasses() throws IOException {
         ArrayList<Double> classes = new ArrayList<Double>();
-        File trainingNegativeFile = new File("trainingdatanegative.txt");
+        File trainingNegativeFile = new File("src/main/trainingdatanegative.txt");
         FileReader trainingNegativeFr = new FileReader(trainingNegativeFile);
         BufferedReader trainingNegativeBr = new BufferedReader(trainingNegativeFr);
 
@@ -128,7 +128,7 @@ public class needtodeleted {
         trainingNegativeBr.close();
         trainingNegativeFr.close();
 
-        File trainingPositiveFile = new File("trainingdatapositive.txt");
+        File trainingPositiveFile = new File("src/main/trainingdatapositive.txt");
         FileReader trainingPositiveFr = new FileReader(trainingPositiveFile);
         BufferedReader trainingPositiveBr = new BufferedReader(trainingPositiveFr);
         while (trainingPositiveBr.readLine() != null){
