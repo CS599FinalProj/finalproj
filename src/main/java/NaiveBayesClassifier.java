@@ -25,7 +25,6 @@ public class NaiveBayesClassifier {
      */
     private int totalDocumentCount;
 
-
     public NaiveBayesClassifier() {
         nlp = new nlpProcessing();
         docFrequency = new ArrayList<String>();
@@ -136,14 +135,8 @@ public class NaiveBayesClassifier {
             }
         }
 
-        // TODO: students need to return the name of the category as output.
         return category;
     }
-
-    public int getTotalDocumentCount() {
-        return totalDocumentCount;
-    }
-
 
     private TreeMap<String, Integer> updateFrequency(String[] documents, TreeMap<String, Integer> treeMap){
         for(String str : documents){

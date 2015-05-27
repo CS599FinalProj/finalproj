@@ -6,11 +6,15 @@ import java.util.Hashtable;
 
 public class svmClassifer
 {
-    svm_parameter _param = new svm_parameter();
-    svm_problem _prob = new svm_problem();
-    String _model_file;
+    private svm_parameter _param = new svm_parameter();
+    private svm_problem _prob = new svm_problem();
+    private String _model_file;
 
-    String path;
+    public String path;
+    public int numberOfPositive;
+    public int numberOfNegative;
+    public double positiveProportion = 0.0;
+
 
     public svmClassifer(String path)
     {
@@ -87,14 +91,18 @@ public class svmClassifer
             for (svm_node[] aResult : result) {
                 double v;
                 v = svm.svm_predict(model, aResult);
-                if (v == 1.0)
+                if (v == 1.0) {
+                    numberOfPositive++;
                     System.out.println("positive");
-                else
+                }else {
+                    numberOfNegative++;
                     System.out.println("negative");
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        positiveProportion = (double)numberOfPositive / (numberOfNegative + numberOfPositive);
 
     }
 

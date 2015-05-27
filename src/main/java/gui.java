@@ -55,7 +55,10 @@ public class gui extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             try {
-                new nbGenerator(path);
+                nbGenerator nb = new nbGenerator(path);
+                int total = nb.numberOfPositive + nb.getNumberOfNegative;
+                System.out.println("Total number is " + total);
+                System.out.println("Positive proportion is " + nb.positiveProportion);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -69,6 +72,9 @@ public class gui extends JFrame
             svmClassifer svmc = new svmClassifer(path);
             try {
                 svmc.run();
+                int total = svmc.numberOfNegative + svmc.numberOfPositive;
+                System.out.println("Total number is " + total);
+                System.out.println("Positive proportion is " + svmc.positiveProportion);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }

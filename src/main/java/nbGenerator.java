@@ -4,9 +4,15 @@ import java.io.*;
  * Created by ZhengLu JeffWang on 5/20/15.
  */
 public class nbGenerator {
+
+    NaiveBayesClassifier nbc = new NaiveBayesClassifier();
+    public int numberOfPositive = 0;
+    public int getNumberOfNegative = 0;
+    public double positiveProportion = 0.0;
+
     public nbGenerator(String path) throws IOException {
 
-        NaiveBayesClassifier nbc = new NaiveBayesClassifier();
+
 
         File trainingNegativeFile = new File("src/main/trainingdatanegative.txt");
         FileReader trainingNegativeFr = new FileReader(trainingNegativeFile);
@@ -29,15 +35,21 @@ public class nbGenerator {
         trainingNegativeFr.close();
 
 
-
-        File testFile = new File("src/main/testdata.txt");
+        File testFile = new File(path);
         FileReader testFr = new FileReader(testFile);
         BufferedReader testBr = new BufferedReader(testFr);
         String testLine;
         while((testLine = testBr.readLine()) != null){
-            System.out.println(nbc.testData(testLine));
+            String category = nbc.testData(testLine);
+            System.out.println(category);
+            if(category.equals("positive")){
+                numberOfPositive++;
+            }else{
+                getNumberOfNegative++;
+            }
         }
-
-
+        positiveProportion = (double)numberOfPositive / (numberOfPositive + getNumberOfNegative);
+        testBr.close();
+        testFr.close();
     }
 }
