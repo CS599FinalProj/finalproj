@@ -18,6 +18,7 @@ import java.util.Properties;
 public class Evaluation {
     public int numberOfPositive = 0;
     public int numberOfNegative = 0;
+    public int numberOfOther = 0;
     public double positiveProportion = 0.0;
 
     public Evaluation(String path) throws IOException {
@@ -37,8 +38,12 @@ public class Evaluation {
                 numberOfPositive++;
             }else if(category.equals("Negative")){
                 numberOfNegative++;
+            }else{
+                numberOfOther++;
             }
         }
+        numberOfPositive += (double)numberOfOther / 2;
+        numberOfNegative += (double)numberOfOther / 2;
         positiveProportion = (double)numberOfPositive / (numberOfPositive + numberOfNegative);
         testBr.close();
         testFr.close();
@@ -46,7 +51,7 @@ public class Evaluation {
     }
 
 
-    private static String eval(String document, StanfordCoreNLP pipeline){
+    private String eval(String document, StanfordCoreNLP pipeline){
         String result = null;
 
         Annotation annotation = pipeline.process(document);

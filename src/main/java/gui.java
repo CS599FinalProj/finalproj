@@ -20,9 +20,15 @@ public class gui extends JFrame
     private String path = "";
     private String name = "";
 
-    private ArrayList<Double> positiveComment = new ArrayList<Double>();
-    private ArrayList<Double> negativeComment = new ArrayList<Double>();
-    private ArrayList<String> fileName = new ArrayList<String>();
+    private ArrayList<Double> nbPositive = new ArrayList<Double>();
+    private ArrayList<Double> nbNegative = new ArrayList<Double>();
+    private ArrayList<String> nbFileName = new ArrayList<String>();
+    private ArrayList<Double> svmPositive = new ArrayList<Double>();
+    private ArrayList<Double> svmNegative = new ArrayList<Double>();
+    private ArrayList<String> svmFileName = new ArrayList<String>();
+    private ArrayList<Double> ePositive = new ArrayList<Double>();
+    private ArrayList<Double> eNegative = new ArrayList<Double>();
+    private ArrayList<String> eFileName = new ArrayList<String>();
 
     public gui()
     {
@@ -86,10 +92,11 @@ public class gui extends JFrame
                     int total = nb.numberOfPositive + nb.numberOfNegative;
                     System.out.println("Total number is " + total);
                     System.out.println("Positive proportion is " + nb.positiveProportion);
-                    positiveComment.add(nb.numberOfPositive*1.0/total);
-                    negativeComment.add(nb.numberOfNegative*1.0/total);
-                    fileName.add(name);
-                    generateChart("Naive Bayes");
+                    System.out.println("Negative proportion is " + (1.0 - nb.positiveProportion));
+                    nbPositive.add(nb.numberOfPositive*1.0/total);
+                    nbNegative.add(nb.numberOfNegative*1.0/total);
+                    nbFileName.add(name);
+                    generateChart("Naive Bayes", nbPositive, nbNegative, nbFileName);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -113,10 +120,11 @@ public class gui extends JFrame
                     int total = svmc.numberOfNegative + svmc.numberOfPositive;
                     System.out.println("Total number is " + total);
                     System.out.println("Positive proportion is " + svmc.positiveProportion);
-                    positiveComment.add(svmc.numberOfPositive*1.0/total);
-                    negativeComment.add(svmc.numberOfNegative*1.0/total);
-                    fileName.add(name);
-                    generateChart("SVM");
+                    System.out.println("Negative proportion is " + (1.0 - svmc.positiveProportion));
+                    svmPositive.add(svmc.numberOfPositive * 1.0 / total);
+                    svmNegative.add(svmc.numberOfNegative*1.0/total);
+                    svmFileName.add(name);
+                    generateChart("SVM", svmPositive, svmNegative, svmFileName);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -126,24 +134,30 @@ public class gui extends JFrame
 
     private class button4 implements ActionListener
     {
-        public void actionPerformed(ActionEvent e) {
-            if (path.equals("")) {
+        public void actionPerformed(ActionEvent e)
+        {
+            if(path.equals(""))
+            {
                 JOptionPane.showMessageDialog(null, "Please choose a testing data");
-            } else {
-
-                try {
+            }
+            else
+            {
+                try
+                {
                     Evaluation evaluation = new Evaluation(path);
                     int total = evaluation.numberOfNegative + evaluation.numberOfPositive;
                     System.out.println("Total number is " + total);
                     System.out.println("Positive proportion is " + evaluation.positiveProportion);
-                    positiveComment.add(evaluation.numberOfPositive * 1.0 / total);
-                    negativeComment.add(evaluation.numberOfNegative * 1.0 / total);
-                    fileName.add(name);
-                    generateChart("Evaluation");
+                    System.out.println("Negative proportion is " + (1.0 - evaluation.positiveProportion));
+                    ePositive.add(evaluation.numberOfPositive * 1.0 / total);
+                    eNegative.add(evaluation.numberOfNegative * 1.0 / total);
+                    eFileName.add(name);
+                    generateChart("Evaluation", ePositive, eNegative, eFileName);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
             }
+
         }
     }
 
@@ -151,9 +165,15 @@ public class gui extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            positiveComment.clear();
-            negativeComment.clear();
-            fileName.clear();
+            nbPositive.clear();
+            nbNegative.clear();
+            nbFileName.clear();
+            svmPositive.clear();
+            svmNegative.clear();
+            svmFileName.clear();
+            ePositive.clear();
+            eNegative.clear();
+            eFileName.clear();
             path = "";
             name = "";
         }
@@ -167,9 +187,9 @@ public class gui extends JFrame
         }
     }
 
-    public void generateChart(String str)
+    public void generateChart(String str, ArrayList<Double> positive, ArrayList<Double> negative, ArrayList<String> fname)
     {
-        Chart chart = new Chart(str, positiveComment, negativeComment, fileName);
+        Chart chart = new Chart(str, positive, negative, fname);
         chart.pack();
         RefineryUtilities.centerFrameOnScreen(chart);
         chart.setVisible(true);
