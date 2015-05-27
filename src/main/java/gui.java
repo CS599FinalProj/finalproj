@@ -56,7 +56,7 @@ public class gui extends JFrame
         {
             try {
                 nbGenerator nb = new nbGenerator(path);
-                int total = nb.numberOfPositive + nb.getNumberOfNegative;
+                int total = nb.numberOfPositive + nb.numberOfNegative;
                 System.out.println("Total number is " + total);
                 System.out.println("Positive proportion is " + nb.positiveProportion);
             } catch (IOException e1) {

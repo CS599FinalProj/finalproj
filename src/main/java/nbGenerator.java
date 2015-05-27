@@ -7,7 +7,7 @@ public class nbGenerator {
 
     NaiveBayesClassifier nbc = new NaiveBayesClassifier();
     public int numberOfPositive = 0;
-    public int getNumberOfNegative = 0;
+    public int numberOfNegative = 0;
     public double positiveProportion = 0.0;
 
     public nbGenerator(String path) throws IOException {
@@ -45,10 +45,10 @@ public class nbGenerator {
             if(category.equals("positive")){
                 numberOfPositive++;
             }else{
-                getNumberOfNegative++;
+                numberOfNegative++;
             }
         }
-        positiveProportion = (double)numberOfPositive / (numberOfPositive + getNumberOfNegative);
+        positiveProportion = (double)numberOfPositive / (numberOfPositive + numberOfNegative);
         testBr.close();
         testFr.close();
     }
